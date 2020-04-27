@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+if [[ -z $1 ]]; then
+	echo "You must enter your file name as an argument for this command!" >&2
+	exit 1
+else
+	read -p "Do you want to create a script with ($1) name?(y,n)"
+	case $REPLY in
+	y|Y)	if [[ -e "$1" ]]; then
+			echo "There is a file with this name"
+			else
+			echo '#!/bin/bash' > "./$1" && chmod 755 "./$1" && vi "./$1"
+			fi
+	;;
+	n|N)	echo "Proccess terminated. Good luck!"
+	;;
+	esac
+fi
