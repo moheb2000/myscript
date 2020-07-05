@@ -10,7 +10,7 @@ else
 	y|Y)	if [[ -e "$1" ]]; then
 			echo "There is a file with this name"
 			else
-			echo '#!/bin/bash' > "./$1" && chmod 755 "./$1" && vi "./$1"
+			echo '#!/bin/bash' > "./$1" && chmod 755 "./$1" && vim "./$1"
 			fi
 	;;
 	n|N)	echo "Proccess terminated. Good luck!"
